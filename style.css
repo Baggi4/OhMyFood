@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+/* Polices
+Logo et titres: Shrikhand
+Texte: Roboto */
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+:root {
+    font-family: 'Roboto', sans-serif;
+    --app-bg: #fff;
+    --bg-color-1: #eaeaea;
+    --bg-color-2: #f6f6f6;
+    --footer-area-bg: #353535;
+    --color-primary: #9356DC;
+    --color-secondary: #FF79DA;
+    --color-tertiary: #99E2D0;
+    --btn-color-hover:#f5edff;
+    --btn-new-color-text:#008766;
+    --btn-color-gray: gray;
+}
+body, html {
+    background-color: var(--app-bg);
+    scroll-behavior: smooth;
+    margin: 0;
+} 
+body {
+    width: 100%;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+p { 
+    font-size: 20px;
+    font-weight: 300;
+}
+h1 {
+    font-family: "Shrikhand";
+    font-size: 72px;
+    text-align: center;
+}
+h2 {
+    font-size: 30px;
+    margin: 0 30px;
+}
+h3 {
+    font-size: 15px;
+    font-weight: 500;
+}
+button, a {
+    cursor: pointer;
+    text-decoration: none;
+}
+.fa, .fas {
+    font-size: 20px;
+    width: 30px;
+}
+main {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+header {
+    background-color: var(--app-bg);
+    border-bottom: 2px;
+    width: 100%;
+}
+.localisation {
+    display: flex;
+    background-color: var(--bg-color-1);
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 10px -10px black inset;
+}
+#réserver h2, p {
+    text-align: center;
+}
+
+#réserver {
+    padding: 50px 0;
+    background-color: var(--bg-color-2);
+}
+#réserver .btn {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-radius: 100px;
+    border: hidden;
+    color: var(--app-bg);
+    background: linear-gradient(#ff79DA, #9356dc);
+    box-shadow: 0 0 8px 0 var(--btn-color-gray);
+}
+#fonctionnement {
+    text-align: left;
+    margin: 0 auto;
+    padding: 40px 10px;
+}
+.fonctionnement-box, h2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.fonctionnement-button {
+    max-width: 400px;
+    height: 75px;
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color-2);
+    border-radius: 25px;
+    border: none;
+    box-shadow: 3px 6px 15px -5px var(--footer-area-bg);  
+}
+.fonctionnement-button .fas {
+    color: #6a6a6a;
+}
+.fonctionnement-button:hover {
+    background-color: var(--color-primary);
+    opacity: .5;
+    transition: 0.3s;
+}
+.fonctionnement-button .number {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9356dc;
+    border-radius: 100%;
+    transform: translateX(-30px);
+    color: var(--app-bg);
+    font-size: small;
+    z-index: -0;
+}
+.fonctionnement-button h3 {
+    display: inline-block;
+    margin: 0 auto;
+}
