@@ -1,0 +1,374 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+/* Polices
+Logo et titres: Shrikhand
+Texte: Roboto */
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+  --app-bg: #fff;
+  --bg-color-1: #eaeaea;
+  --bg-color-2: #f6f6f6;
+  --footer-area-bg: #353535;
+  --color-primary: #9356DC;
+  --color-secondary: #FF79DA;
+  --color-tertiary: #99E2D0;
+  --btn-color-hover:#f5edff;
+  --btn-new-color-text:#008766;
+  --btn-color-gray: gray;
+}
+
+body, html {
+  background-color: var(--app-bg);
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  min-width: 375px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+ul, nav {
+  list-style-type: none;
+}
+
+h1 {
+  font-family: "Shrikhand";
+}
+
+h2 {
+  font-size: 30px;
+  margin: 30px 20px;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+button, a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.fa, .fas {
+  font-size: 20px;
+  width: 30px;
+}
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .fas {
+  font-size: 30px;
+  position: absolute;
+  margin: -15px 20px;
+}
+header .logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bg-img {
+  height: 275px;
+}
+.bg-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--bg-color-1);
+  border-radius: 25px 25px 0 0;
+  bottom: 50px;
+  margin-bottom: -50px;
+  padding: 25px;
+}
+.menu .btn {
+  animation: fondu-in 0.2s ease-out;
+  animation-delay: 0.8s;
+  animation-fill-mode: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: hidden;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 50px;
+  min-width: 200px;
+  border-radius: 100px;
+  color: var(--app-bg);
+  background: linear-gradient(#ff79DA, #9356dc);
+  box-shadow: 0 0 8px 0 var(--btn-color-gray);
+}
+.menu .btn:hover {
+  background: linear-gradient(356deg, #a16be0 0%, #a16be0 33%, #ff93e1 88%, #ff93e1 100%);
+  box-shadow: #4b4b4b 0 5px 10px;
+  transition: 0.5s ease-in-out;
+}
+
+.menu-title {
+  font-family: "Shrikhand";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-title h2 {
+  font-size: 25px;
+  margin: 0;
+}
+.menu-title .far {
+  font-size: 30px;
+}
+
+.box-menu h3 {
+  font-size: large;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 25px;
+  position: relative;
+  animation: slide 1s forwards;
+  animation-delay: 0.6s;
+}
+.box-menu p {
+  font-size: medium;
+}
+
+.menu .box-menu .entrée {
+  display: flex;
+  background-color: #ca1313;
+  height: 75px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(153, 153, 153, 0.3);
+  margin: 15px 0 15px 0;
+}
+.menu .box-menu .entrée .li__1 {
+  position: relative;
+  bottom: -25px;
+  opacity: 0;
+  animation: fondu-in 0.2s ease-out;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+.menu .box-menu .entrée .li__1 .li__content {
+  flex: 3;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu .box-menu .entrée .li__1 .li__price {
+  flex: 0.5;
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.menu .box-menu .entrée .li__1 .li__check {
+  animation: checkout 0.5s ease-in-out;
+  animation-fill-mode: both;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 15px 15px 0;
+}
+
+.localisation {
+  display: flex;
+  background-color: var(--bg-color-1);
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 10px -10px black inset;
+}
+
+#réserver {
+  padding: 50px 0;
+  background-color: var(--bg-color-2);
+}
+#réserver h2, #réserver p {
+  text-align: center;
+}
+#réserver .btn {
+  display: flex;
+  margin: 0 auto;
+  padding: 0 20px;
+  border-radius: 100px;
+  border: hidden;
+  color: var(--app-bg);
+  background: linear-gradient(#ff79DA, #9356dc);
+  box-shadow: 0 0 8px 0 var(--btn-color-gray);
+}
+
+#fonctionnement {
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+
+.fonctionnement-box {
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fonctionnement-button {
+  max-width: 310px;
+  height: 75px;
+  margin: 20px;
+  padding: 0;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color-2);
+  border: none;
+  box-shadow: 3px 6px 15px -5px var(--footer-area-bg);
+}
+.fonctionnement-button :hover {
+  background-color: #9960de;
+  transition: 0.3s ease-in-out;
+}
+.fonctionnement-button .fas {
+  color: #6a6a6a;
+}
+.fonctionnement-button i {
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+.fonctionnement-button .number {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9356dc;
+  border-radius: 100%;
+  transform: translateX(-15px);
+  color: var(--app-bg);
+  font-size: small;
+}
+.fonctionnement-button h3 {
+  display: inline-block;
+  margin: 0;
+}
+
+.fonctionnement-button:hover {
+  background-color: #efe2ff;
+  transition: 0.3s ease-in-out;
+}
+
+/* restaurants */
+#restaurants {
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+#restaurants img {
+  width: 100%;
+  height: 175px;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+#restaurants .card {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 255px;
+  background-color: #fff;
+  position: relative;
+}
+#restaurants .card :hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+}
+#restaurants .card .card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 10px;
+}
+#restaurants .card .card-info .far {
+  font-size: 25px;
+}
+#restaurants .card .card-info .card-text {
+  width: 200px;
+}
+#restaurants .card .card-info .card-title {
+  font-size: 18px;
+  padding-left: 3%;
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+#restaurants .card .card-info p {
+  font-size: 18px;
+  padding-left: 3%;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+footer {
+  padding: 20px;
+  background-color: var(--footer-area-bg);
+}
+footer a {
+  color: var(--app-bg);
+}
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+footer h1 {
+  text-align: left;
+  font-size: 20px;
+  font-weight: lighter;
+}
+footer li {
+  margin: 10px 0;
+}
+footer li i {
+  margin-right: 15px;
+}
+footer li .fas {
+  font-size: inherit;
+  width: inherit;
+}
+
+/*# sourceMappingURL=style.css.map */
