@@ -1,0 +1,65 @@
+@mixin btn {
+    animation: fondu-in 0.2s ease-out;
+    animation-delay: 0.8s;
+    animation-fill-mode: both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: hidden;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 50px;
+    min-width: 200px;
+    border-radius: 100px;
+    color: var(--app-bg);
+    background: linear-gradient(#ff79DA, #9356dc);
+    box-shadow: 0 0 8px 0 var(--btn-color-gray);
+}
+@mixin absolute-element ($top, $right) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    transform: translate($x,$y);
+}
+@mixin pseudo-element ($display: block, $pos: absolute, $content:'') {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+@mixin heartfill {
+    font-weight:900;
+    background: -webkit-linear-gradient($secondarycolor, $primarycolor);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fondu-in .5s ease-in-out;
+    animation-delay: .1s;
+    transition:.5s ease-in-out;
+}
+@mixin appear($time: 1s) {
+    position:relative;
+    bottom:-25px;
+    opacity:0;
+    animation: fondu-in 0.2s ease-out;
+    animation-delay: $time;
+    animation-fill-mode: both;
+}
+@mixin slidein($time2:.6s){
+    position:relative;
+    left:-300%;
+    animation:slide 1s forwards;
+    animation-delay: $time2;
+}
+
+@mixin lightme {
+    background: linear-gradient(
+        356deg,
+        lighten($primarycolor,5%) 0%,
+        lighten($primarycolor,5%) 33%,
+        lighten($secondarycolor,5%) 88%,
+        lighten($secondarycolor,5%) 100%,
+    );
+    box-shadow: #4b4b4b 0 5px 10px;
+    transition: .5s ease-in-out;
+}

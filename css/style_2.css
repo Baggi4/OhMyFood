@@ -1,0 +1,25 @@
+/* media queries */
+
+@media screen and (min-width: 768px) {
+footer h1 {
+    display: flex;
+    margin: 0 auto;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+footer li {
+    display: inline-block;
+    width: 23.9%;
+    height: 150%;
+    margin: 0 auto;
+    font-size: 20px;
+}
+footer ul {
+    width: 100%;
+    justify-content: space-between;
+}
+footer li .fas {
+    margin: 0 3px;
+}
+}
