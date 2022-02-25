@@ -1,6 +1,10 @@
 /* media queries */
 
 @media screen and (min-width: 768px) {
+
+
+/* footer */
+
 footer h1 {
     display: flex;
     margin: 0 auto;
@@ -8,12 +12,18 @@ footer h1 {
     align-items: center;
     justify-content: center;
 }
+.footer-list {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 80px;
+    margin-right: 80px;
+    font-size: 20px;
+}
 footer li {
     display: inline-block;
     width: 23.9%;
     height: 150%;
     margin: 0 auto;
-    font-size: 20px;
 }
 footer ul {
     width: 100%;

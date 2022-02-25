@@ -34,9 +34,9 @@ ul, li{
     margin-bottom: 50px;
   }
   .menu .btn:hover {
-    background: linear-gradient(356deg, #a16be0 0%, #a16be0 33%, #ff93e1 88%, #ff93e1 100%);
-    box-shadow: #4b4b4b 0 5px 10px;
-    transition: 0.5s ease-in-out;
+    opacity: .8;
+    box-shadow: #4b4b4b 0 1px 5px 2px;
+    transition: 0.2s ease-in-out;
   }
   .menu-title {
     font-family: "Shrikhand";
@@ -51,68 +51,11 @@ ul, li{
   .menu-title .far {
     font-size: 30px;
   }
-  .menu .container__EPD {
+.menu .container {
       margin-bottom: 25px;
-  }
-  
-  /* box-menu */
-  
-  .box-menu h3 {
-    font-size: large;
-    font-weight: 400;
-    text-transform: uppercase;
-    margin-top: 25px;
-    position: relative;
-    animation: slide 1s forwards;
-    animation-delay: 0.6s;
-  }
-  .box-menu p {
-    font-size: medium;
-  }
-  
-  .menu .box-menu .entrée {
-    display: flex;
-    background-color: #ca1313;
-    height: 75px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 20px rgba(153, 153, 153, 0.3);
-    margin: 15px 0 15px 0;
-  }
-  .menu .box-menu .cardmenu {
-    position: relative;
-    bottom: -25px;
-    opacity: 0;
-    animation: fondu-in 0.2s ease-out;
-    animation-delay: 1s;
-    animation-fill-mode: both;
-  }
-  .menu .box-menu .cardmenu--1 .card-menu-title {
-    flex: 3;
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 15px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .menu .box-menu .cardmenu--1 .card-menu-price {
-    flex: 0.5;
-    padding: 15px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-  .menu .box-menu .cardmenu--1 .card-menu-check {
-    animation: checkout 0.5s ease-in-out;
-    animation-fill-mode: both;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0 15px 15px 0;
-  }
-  
+}
+
+
 .menu {
     display: flex;
     flex-direction: column;
@@ -123,7 +66,7 @@ ul, li{
     bottom: 50px;
     margin-bottom: -50px;
 }
-.menu .li__content h4, p {
+.menu .box-content h4, p {
     display: inherit;
     margin: 0;
     padding: 0;
@@ -134,12 +77,12 @@ ul, li{
     margin-inline-end: 0;
     font-weight: inherit;
 }
-.menu .li__content h4 {
+.menu .box-content h4 {
     font-size: 15px;
     font-weight: 600;
 }
 .menu p {
-    font-size: 15px;
+    font-size: 14px;
 }
 .menu ul li {
     cursor: pointer;
@@ -150,7 +93,7 @@ ul, li{
     box-shadow: 0px 5px 20px rgb(153 153 153 / 30%);
     margin: 15px 0 15px 0;
 }
-.menu .li__content {
+.menu .box-content {
     flex: 3;
     width: 150px;
     display: flex;
@@ -159,14 +102,14 @@ ul, li{
     padding: 12px 15px;
     border-radius: 15px 0 0 15px;
 }
-.menu .li__price {
+.menu .box-pricing {
     flex: 0.5;
     padding: 12px 0;
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
-.menu .li__check{
+.menu .success-checkmark{
     animation: checkout 0.5s ease-in-out;
     animation-fill-mode: both;
     display: flex;

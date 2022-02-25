@@ -281,9 +281,6 @@ header .logo {
   background-color: #fff;
   position: relative;
 }
-#restaurants .card :hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
-}
 #restaurants .card .card-info {
   display: flex;
   justify-content: space-between;
@@ -309,6 +306,20 @@ header .logo {
   margin-top: 0;
   margin-bottom: 6px;
 }
+#restaurants .btn-new {
+  background-color: #99E2D0;
+  border-radius: 3px;
+  width: 25%;
+  padding: 7px;
+  text-align: center;
+  font-weight: bold;
+  color: #2fa487;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+/* Footer */
 
 footer {
   padding: 20px;
