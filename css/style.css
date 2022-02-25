@@ -202,6 +202,11 @@ header .logo {
   background: linear-gradient(#ff79DA, #9356dc);
   box-shadow: 0 0 8px 0 var(--btn-color-gray);
 }
+#réserver .btn:hover {
+  opacity: .8;
+  box-shadow: #4b4b4b 0 1px 5px 2px;
+  transition: 0.2s ease-in-out;
+}
 
 #fonctionnement {
   padding-bottom: 40px;
@@ -224,7 +229,7 @@ header .logo {
   align-items: center;
   background-color: var(--bg-color-2);
   border: none;
-  box-shadow: 3px 6px 15px -5px var(--footer-area-bg);
+  box-shadow: 2px 2px 10px -5px var(--footer-area-bg);
 }
 .fonctionnement-button .fas {
   color: #6a6a6a;
@@ -251,11 +256,15 @@ header .logo {
 }
 
 .fonctionnement-button:hover {
-  background-color: #efe2ff;
-  transition: 0.3s ease-in-out;
+  background-color: #f9f3ff;
+  transition: 0.2s ease-in-out;
+}
+.fonctionnement-button:hover .fas {
+  color: #9356dc;
 }
 
 /* restaurants */
+
 #restaurants {
   background-color: #f6f6f6;
   display: flex;
