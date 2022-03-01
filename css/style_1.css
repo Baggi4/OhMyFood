@@ -1,19 +1,14 @@
-.far {
-    display: inherit;
-}
-ul, li{
-    display: inherit;
-    margin: 0;
-    padding: 0;
-    text-align: inherit;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-}
-
 /* menu */
-
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    border-radius: 25px 25px 0 0;
+    padding: 20px;
+    position: relative;
+    bottom: 50px;
+    margin-bottom: -50px;
+}
 .menu .btn {
     animation: fondu-in 0.2s ease-out;
     animation-delay: 0.8s;
@@ -32,39 +27,24 @@ ul, li{
     position: relative;
     margin-top: 10px;
     margin-bottom: 50px;
-  }
-  .menu .btn:hover {
+}
+.menu .btn:hover {
     opacity: .8;
     box-shadow: #4b4b4b 0 1px 5px 2px;
     transition: 0.2s ease-in-out;
-  }
-  .menu-title {
+}
+.menu-title {
     font-family: "Shrikhand";
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  .menu-title h2 {
+}
+.menu-title h2 {
     font-size: 25px;
     margin: 0;
-  }
-  .menu-title .far {
-    font-size: 30px;
-  }
+}
 .menu .container {
       margin-bottom: 25px;
-}
-
-
-.menu {
-    display: flex;
-    flex-direction: column;
-    background-color: #f2f2f2;
-    border-radius: 25px 25px 0 0;
-    padding: 20px;
-    position: relative;
-    bottom: 50px;
-    margin-bottom: -50px;
 }
 .menu .box-content h4, p {
     display: inherit;
@@ -110,11 +90,15 @@ ul, li{
     align-items: flex-end;
 }
 .menu .success-checkmark{
-    animation: checkout 0.5s ease-in-out;
-    animation-fill-mode: both;
     display: flex;
     justify-content: center;
-    align-items: center;
-    border-radius: 0 15px 15px 0;
-    opacity: 0%;
+    color: #fff;
+    background: #99E2D0;
+    border: 1px solid #99E2D0;
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    border-radius: 0 25px 25px 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
 }
