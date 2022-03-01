@@ -1,7 +1,10 @@
 /* Animations */
 .heart-menu {
-  padding-right: 5%;
-  padding-bottom: 3%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 .heart-menu .far {
 	font-size: 30px;
