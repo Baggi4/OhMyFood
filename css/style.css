@@ -33,7 +33,28 @@ body {
   width: 100%;
   min-width: 375px;
 }
+body>* {
+  animation: page-delay 0ms 1250ms both;
+}
+/* Page-loader */
 
+.loader {
+  border: 10px solid transparent;
+  border-top-color: #9356DC;
+  border-bottom-color: #FF79DA;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: auto;
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  animation: wiggle 1001ms 0ms both linear;
+  animation-iteration-count: 2;
+}
 a {
   cursor: pointer;
   text-decoration: none;
@@ -112,80 +133,61 @@ header .logo {
   object-fit: cover;
 }
 
-/* menu */
+/* heart-fill-animation */
 
-.menu-title {
-  font-family: "Shrikhand";
+.heart-menu {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  padding: 20px;
 }
-.menu-title h2 {
-  font-size: 25px;
-  margin: 0;
+.heart-menu .far {
+	font-size: 30px;
+	position: absolute;
 }
-.menu-title .far {
-  font-size: 30px;
-}
-
-/* box-menu */
-
-.box-menu h3 {
-  font-size: large;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-top: 25px;
-  position: relative;
-  animation: slide 1s forwards;
-  animation-delay: 0.6s;
-}
-.box-menu p {
-  font-size: medium;
-}
-
-.menu .box-menu .entrée {
-  display: flex;
-  background-color: #ca1313;
-  height: 75px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 20px rgba(153, 153, 153, 0.3);
-  margin: 15px 0 15px 0;
-}
-.menu .box-menu .cardmenu {
-  position: relative;
-  bottom: -25px;
+.heart-menu .fas {
+	font-size: 30px;
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-image: linear-gradient(#FF79DA, #9356DC);
   opacity: 0;
-  animation: fondu-in 0.2s ease-out;
-  animation-delay: 1s;
-  animation-fill-mode: both;
+	position: absolute;
+	transform-origin: 50% 100%;
 }
-.menu .box-menu .cardmenu--1 .card-menu-title {
-  flex: 3;
-  width: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 15px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.heart-menu:hover > .fas {
+	animation: heart-animation 400ms linear both;
 }
-.menu .box-menu .cardmenu--1 .card-menu-price {
-  flex: 0.5;
-  padding: 15px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+.heart-menu:hover > .far {
+	animation: heart-fill 600ms linear both;
 }
-.menu .box-menu .cardmenu--1 .card-menu-check {
-  animation: checkout 0.5s ease-in-out;
-  animation-fill-mode: both;
-  display: flex;
-  justify-content: center;
+.card-info .heart-accueil {
+	padding-right: 20px;
+  padding-bottom: 30px;
   align-items: center;
-  border-radius: 0 15px 15px 0;
+  width: 35px;
 }
-
+.card-info .heart-accueil .far {
+	font-size: 30px;
+	position: absolute;
+}
+.card-info .heart-accueil .fas {
+  font-size: 30px;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  opacity: 0;
+  position: absolute;
+  transform-origin: 50% 100%;
+}
+.card-info .heart-accueil:hover > .fas {
+  animation: heart-animation 200ms linear both;
+}
+.card-info .heart-accueil:hover > .far {
+  animation: heart-fill 400ms linear both;
+}
 .localisation {
   display: flex;
   background-color: var(--bg-color-1);
@@ -216,18 +218,16 @@ header .logo {
   box-shadow: #4b4b4b 0 1px 5px 2px;
   transition: 0.2s ease-in-out;
 }
-
 #fonctionnement {
   padding-bottom: 40px;
   padding-top: 20px;
+  background-color: var(--app-bg);
 }
-
 .fonctionnement-box {
   padding: 0 15px;
   display: flex;
   flex-direction: column;
 }
-
 .fonctionnement-button {
   max-width: 310px;
   height: 75px;
@@ -263,7 +263,6 @@ header .logo {
   display: inline-block;
   margin: 0;
 }
-
 .fonctionnement-button:hover {
   background-color: #f9f3ff;
   transition: 0.2s ease-in-out;
@@ -363,5 +362,294 @@ footer li .fas {
   font-size: inherit;
   width: inherit;
 }
+/* menu- */
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  border-radius: 25px 25px 0 0;
+  padding: 20px;
+  position: relative;
+  bottom: 50px;
+  margin-bottom: -50px;
+}
+.menu-title {
+  font-family: "Shrikhand";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-title h2 {
+  font-size: 25px;
+  margin: 0;
+}
+.menu-title .far {
+  font-size: 30px;
+}
+.menu .btn {  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: hidden;
+  margin: auto;
+  position: relative;
+  height: 50px;
+  min-width: 200px;
+  border-radius: 100px;
+  color: var(--app-bg);
+  background: linear-gradient(#ff79DA, #9356dc);
+  box-shadow: 0 0 8px 0 var(--btn-color-gray);
+  margin-top: 10px;
+  margin-bottom: 50px;
+  opacity: 0;
+  animation: fondu-in .8s ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode:forwards;
+}
+.menu .btn:hover {
+  opacity: .8;
+  box-shadow: #4b4b4b 0 1px 5px 2px;
+  transition: 0.2s ease-in-out;
+}
+.menu-title {
+  font-family: "Shrikhand";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-title h2 {
+  font-size: 25px;
+  margin: 0;
+}
+.menu .container {
+    margin-bottom: 25px;
+}
+.menu .box-content h4, p {
+  display: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-weight: inherit;
+}
+.menu .box-content h4 {
+  font-size: 15px;
+  font-weight: 600;
+}
+.menu p {
+  font-size: 14px;
+}
+.menu ul li {
+  cursor: pointer;
+  display: flex;
+  background-color: white;
+  height: 65px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgb(153 153 153 / 30%);
+  margin: 15px 0 15px 0;
+  animation: fondu-in 1.3s ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+.menu .box-content {
+  flex: 3;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px 15px;
+  border-radius: 15px 0 0 15px;
+}
+.menu .box-pricing {
+  flex: 0.5;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.menu ul li i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  border-radius: 0 15px 15px 0;
+}
+.menu ul li .success-checkmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 15px 15px 0;
+  animation: checkout 0.5s ease-in-out;
+  animation-fill-mode: both;
+}
+.menu ul li:hover .success-checkmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 15px 15px 0;
+  animation: check 0.5s ease-in-out;
+  animation-fill-mode: both;
+}
+.menu ul li:hover i {
+  border-radius: 0 15px 15px 0;
+  animation: spin 0.5s ease-in-out;
+  animation-fill-mode: both;
+}
+/* Animations */
 
+/* @keyframes */
+@keyframes fondu-in{
+  0%{
+      opacity:0;
+      bottom:-25px;
+  }
+  70%{
+      opacity:.5;
+  }
+  100%{
+      opacity:1;
+      bottom:0;
+  }
+}
+@keyframes heart-animation {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(0.4);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes heart-fill {
+  from {
+    color: gray;
+  }
+  to {
+    color: transparent;
+  }
+}
+@keyframes menu-slide{
+	0%{
+        left: -200%;  
+    }
+	90%{
+        left:1%; 
+    }
+	100%{
+        left:0%;
+    }
+}
+/* Loader */
+
+@-webkit-keyframes wiggle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+@keyframes page-delay{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        }
+}
+/* check-out */
+
+@keyframes check{
+  0%{
+      flex:0;
+      background-color:white ;
+  }
+  70%{
+      flex:1.5;
+      background-color:#99E2D0;
+  }
+  100%{
+      flex:1;
+      background-color:#99E2D0;
+  }
+}
+@keyframes checkout{
+  from{
+      flex:1;
+      background-color:#99E2D0;
+  }
+  to{
+      flex:0;
+      background-color:white
+  }
+}
+@keyframes spin{
+  to{
+      transform: rotate(360deg);
+  }
+}
+/* media queries */
+@media screen and (min-width: 768px) {
+  .menu .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .container .E, .P, .D {
+    width: 33%;
+  }
+  .fonctionnement-box {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: inherit;
+  }
+  .fonctionnement-button {
+      width: 100%;
+  }
+  #restaurants {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      flex-direction: inherit;
+  }
+  #restaurants h2 {
+      min-width: 95%;
+  }
+  #restaurants a {
+      width: 40%;
+  }
+  footer ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      font-size: 20px;
+  }
+  footer h1 {
+      font-size: 40px;
+      margin: 0 39%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
